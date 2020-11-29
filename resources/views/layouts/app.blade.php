@@ -107,9 +107,9 @@
     {{-- Scripts --}}
     <script src="{{asset('js/toastr.min.js')}}"></script>
     <script>
-        @if(Session::has(success)) {
-          toastr.success("{{Session:get('Success')}}")  
-        }
+        @if(Session::has('success')) 
+          toastr.success("{{Session:get('success')}}")  
+        @endif
     </script>
 </body>
 </html>

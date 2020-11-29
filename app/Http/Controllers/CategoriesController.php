@@ -46,6 +46,7 @@ class CategoriesController extends Controller
         $category->name = $request->name;
         $category->save();
 
+        Session::flash('success', 'You Successfuly created category  ');
         return redirect()->route('categories');
     }
 
@@ -85,6 +86,9 @@ class CategoriesController extends Controller
         $category = Category::find($id);
         $category->name = $request->name;
         $category->save();
+
+        Session::flash('success', 'You Successfuly updated category  ');
+
 
         return redirect()->route('categories');
 
