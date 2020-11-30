@@ -6,26 +6,33 @@
             <table class="table table-hover">
                 <thead>
                     <th>
-                        Category Name
+                        Image
                     </th>
                     <th>
-                        Editing
+                        Title
                     </th>
                     <th>
-                        Deleting
+                        Edit
+                    </th>
+                    <th>
+                        Trashs
                     </th>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $category)
+                    @foreach ($posts as $post)
                         <tr>
                             <td>
-                                {{ $category->name }}
+                                <img src="{{$post->featured}}" alt="{{$post->title}}" width="90px" height="50px">
                             </td>
                             <td>
-                                <a href="{{route('category.edit' , ['id' => $category->id])}}" class="btn btn-info btn-sm">Edit</a>
+                                {{$post->title}}
                             </td>
                             <td>
-                                <a href="{{route('category.delete' , ['id' => $category->id])}}" class="btn btn-sm btn-danger">&#10006;</a>
+                                <a href="{{route('post.edit', ['id' => $post->id ])}}" class="btn btn-sm btn-info">Edit</a>
+
+                            </td>
+                            <td>
+                                <a href="{{route('post.delete', ['id' => $post->id ])}}" class="btn btn-sm btn-danger">Trash</a>
                             </td>
                         </tr>
                     @endforeach

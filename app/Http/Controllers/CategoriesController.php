@@ -106,6 +106,7 @@ class CategoriesController extends Controller
         $category = Category::find($id);
         $category->delete();
 
+        Session::flash('success', 'You Successfuly category  ');
         return redirect()->route('categories');
 
     }
