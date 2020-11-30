@@ -105,10 +105,11 @@
     </div>
 
     {{-- Scripts --}}
+    <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
     <script src="{{asset('js/toastr.min.js')}}"></script>
     <script>
         @if(Session::has('success')) 
-          toastr.success("{{Session:get('success')}}")  
+          toastr.success(" {{ Session::get('success') }} ")  
         @endif
     </script>
 </body>
