@@ -3,13 +3,13 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3>Categories</h3>
+            <h3>Tags</h3>
         </div>
         <div class="card-body">
             <table class="table table-hover">
                 <thead>
                     <th>
-                        Category Name
+                        Tag Name
                     </th>
                     <th>
                         Editing
@@ -19,23 +19,23 @@
                     </th>
                 </thead>
                 <tbody>
-                    @if ($categories->count() > 0)
-                        @foreach ($categories as $category)
+                    @if ($tags->count() > 0)
+                        @foreach ($tags as $tag)
                             <tr>
                                 <td>
-                                    {{ $category->name }}
+                                    {{ $tag->tag }}
                                 </td>
                                 <td>
-                                    <a href="{{route('category.edit' , ['id' => $category->id])}}" class="btn btn-info btn-sm">Edit</a>
+                                    <a href="{{route('tag.edit' , ['id' => $tag->id])}}" class="btn btn-info btn-sm">Edit</a>
                                 </td>
                                 <td>
-                                    <a href="{{route('category.delete' , ['id' => $category->id])}}" class="btn btn-sm btn-danger">&#10006;</a>
+                                    <a href="{{route('tag.delete' , ['id' => $tag->id])}}" class="btn btn-sm btn-danger">&#10006;</a>
                                 </td>
                             </tr>
                         @endforeach
                     @else
                     <tr>
-                        <th colspan='5' class="text-center">No Categories Yet</th>
+                        <th colspan='5' class="text-center">No Tags Yet</th>
                     </tr>  
                     @endif
                 </tbody>
