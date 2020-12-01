@@ -20,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+    @yield('styles')
 
 </head>
 <body>
@@ -77,7 +78,7 @@
 
         <main class="py-4">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     @if(Auth::check())
                     <div class="col col-lg-4">
                         <ul class="list-group">
@@ -89,6 +90,17 @@
                             </li>
                             <li class="list-group-item">
                                 <a href="{{route('tags')}}">Tags</a>
+                            </li>
+                            @if (Auth::user()->admin)
+                                <li class="list-group-item">
+                                    <a href="{{route('users')}}">Users</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{route('user.create')}}">New User</a>
+                                </li>
+                            @endif
+                            <li class="list-group-item">
+                                <a href="{{route('user.profile')}}">My Profile</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="{{route('tag.create')}}">Create Tag</a>
@@ -105,10 +117,15 @@
                             <li class="list-group-item">
                                 <a href="{{route('post.create')}}">Create New Post</a>
                             </li>
+                            @if (Auth::user()->admin)
+                                <li class="list-group-item">
+                                    <a href="{{route('settings')}}">Settings</a>
+                                </li>
+                            @endif
                         </ul>
                     </div> 
                     @endif
-                    <div class="col col-lg-8 m-auto">
+                    <div class="col col-lg-8 justify-content-center align-items-center">
                         @yield('content')
                     </div>
                 </div>
@@ -127,5 +144,7 @@
           toastr.info(" {{ Session::get('info') }} ")  
         @endif
     </script>
+
+    @yield('Scripts')
 </body>
 </html>
