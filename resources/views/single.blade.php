@@ -191,7 +191,7 @@
         
                                 <div class="tags-wrap">
                                     @foreach ($tags as $tag)
-                                        <a href="#" class="w-tags-item">SEO</a>
+                                        <a href="#" class="w-tags-item">{{$tag->tag}}</a>
                                     @endforeach
                                 </div>
                             </div>
