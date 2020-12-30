@@ -72,7 +72,7 @@
                                 </div>
                             </div>
         
-                            <div class="socials">Share:
+                            <div class="socials">
                                 
                             </div>
         

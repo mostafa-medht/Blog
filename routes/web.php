@@ -2,11 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::post('/subscribe', function(){
+    $email = request('email');
+    
+    // use Newsletter;
+    Newsletter::subscribe($email);
+
+    Session::flash('subscribed', 'Successfully Subscribe');
+    return redirect()->back();
+});
+
 Route::get('/test', function () {
     return App\Profile::find(1)->user;
 });
-
-
 
 Route::get('/', [
     'uses' => 'FrontEndController@index',
