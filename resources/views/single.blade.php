@@ -73,21 +73,7 @@
                             </div>
         
                             <div class="socials">Share:
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-facebook"></i>
-                                </a>
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-twitter"></i>
-                                </a>
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-linkedin"></i>
-                                </a>
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-google-plus"></i>
-                                </a>
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-pinterest"></i>
-                                </a>
+                                
                             </div>
         
                         </article>
