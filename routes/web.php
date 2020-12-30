@@ -43,7 +43,10 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function(){
     
-    Route::get('/home', [
+    // Auth::routes();
+
+
+    Route::get('/dashboard', [
         'uses' => 'HomeController@index',
         'as' => 'home'
     ]);
