@@ -54,7 +54,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function(){
     // Auth::routes();
 
 
-    Route::get('/dashboard', [
+    Route::get('/home', [
         'uses' => 'HomeController@index',
         'as' => 'home'
     ]);
